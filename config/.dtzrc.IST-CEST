@@ -1,0 +1,4 @@
+#!/bin/bash
+from_zone=IST
+to_zone=Europe/Berlin
+abbreviation=CET

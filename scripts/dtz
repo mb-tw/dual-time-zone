@@ -1,0 +1,36 @@
+#!/bin/bash
+if ! type -p gdate > /dev/null; then
+    echo "Please install 'gdate' by running 'brew install coreutils' or 'chmod +x scripts/install && scripts/install'";
+    exit;
+fi
+
+file_path=$( cd "$(dirname "${BASH_SOURCE[0]}")" ; pwd -P )
+source $file_path/../config/.dtzrc;
+
+message="$*";
+
+if [[ $message == "" ]]; then
+    printf "please provide a message\n\nusage: dtz <message>"; echo; exit;
+fi
+
+echo "from_zone: $from_zone";
+echo "to_zone: $to_zone";
+echo "format: $format";
+echo;
+
+res=""
+
+for word in $(echo $message); do
+if [[ $word =~ [0-9] ]]; then
+    converted_time=$(TZ="$to_zone" gdate --date="$word $from_zone" $format);
+    res+=" $word $from_zone";
+    res+=" ($converted_time $abbreviation)";
+else 
+    res+=" $word"
+fi
+done
+
+echo $res
+echo $res | pbcopy
+
+exit;

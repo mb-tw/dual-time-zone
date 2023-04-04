@@ -1,0 +1,22 @@
+#!/bin/bash
+file_path=$( cd "$(dirname "${BASH_SOURCE[0]}")" ; pwd -P )
+
+format=+%H:%M
+
+# Set conversion to:
+# (note: CET = "Central European Time", CEST = "Central European Summer Time")
+
+# source $file_path/.dtzrc.BRT-CEST
+# source $file_path/.dtzrc.BRT-CET
+# source $file_path/.dtzrc.CEST-BRT
+# source $file_path/.dtzrc.CEST-IST
+# source $file_path/.dtzrc.CET-BRT
+source $file_path/.dtzrc.CET-IST
+# source $file_path/.dtzrc.IST-CEST
+# source $file_path/.dtzrc.IST-CET
+
+# Adding more conversions
+
+# check out: https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+# use 'Country code' for from_zone
+# use 'TZ database name' for to_zone

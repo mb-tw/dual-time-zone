@@ -1,0 +1,4 @@
+#!/bin/bash
+from_zone=CEST
+to_zone=Asia/Calcutta
+abbreviation=IST

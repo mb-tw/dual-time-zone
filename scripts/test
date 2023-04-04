@@ -1,0 +1,8 @@
+#!/bin/bash
+
+for i in {196..229} {229..196}; do 
+    printf "\e[38;5;${i}mƎE\e[0m"; 
+done; echo
+
+printf "\e[32mDual Time Zone installed successfully, run 'source ~/.zshrc' to use \e[5mdtz"; echo
+

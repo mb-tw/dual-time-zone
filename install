@@ -1,0 +1,9 @@
+#!/bin/bash
+brew install coreutils
+chmod u+rx ./scripts/dtz
+echo "" >> ~/.zshrc
+echo "" >> ~/.zshrc
+echo "# Dual Time Zone" >> ~/.zshrc
+echo "export PATH=\$PATH:$(pwd)/scripts" >> ~/.zshrc
+echo ""
+echo "\e[32mDual Time Zone installed successfully, run 'source ~/.zshrc' to use \e[5m;\e[105mdtz"
