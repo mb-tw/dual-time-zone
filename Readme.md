@@ -6,8 +6,8 @@ CLI tool for translating messages with local times to include another time zone.
 
 ## Install
 
-Within the main project folder:
-`chmod +x ./install && ./install`
+Clone this repo and run:
+`./install`
 
 ## Use
 
